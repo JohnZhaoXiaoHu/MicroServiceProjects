@@ -1,0 +1,81 @@
+﻿@{
+    ViewModel viewModel = ViewData["User"] as ViewModel;
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="~/js/jquery-3.6.0.min.js"></script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <div id="container">
+        <table id="table">
+
+            @{
+                if (viewModel != null)
+                {
+                    if (viewModel.HasSuccess)
+                    {
+                        <tr>
+                            <td><label>Name</label></td>
+                            <td><label>Age</label></td>
+                            <td><label>Sex</label></td>
+                            <td><label>BirthDay</label></td>
+                            <td><label>Address</label></td>
+                        </tr>
+                        foreach (var user in viewModel.Users)
+                        {
+                            //var userId = "submit" + user.Id;
+                            <tr>
+                                <td style="width:100px"><label>@user.Name</label></td>
+                                <td style="width:100px"><label>@user.Age</label></td>
+                                <td style="width:100px"><label>@user.Sex</label></td>
+                                <td style="width:100px"><label>@user.BirthDay</label></td>
+                                <td style="width:100px"><label>@user.Host</label></td>
+                                @*<td style="width:100px"><button id="submit" style="width:100px;height:45px" value="@user.Id">[X]</button></td>*@
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td><h4 style="color:red">@viewModel.Error.Message</h4></td>
+                        </tr>
+                    }
+                }
+                else
+                {
+
+                }
+            }
+        </table>
+    </div>
+    <script type="text/javascript">
+        $('#submit').click(function () {
+            var model = [];
+
+            var id = document.getElementById("submit").value
+            alert(id);
+            //var RTONumber = $("input[name=rtoNumber]").val();
+            //var Approver = $("input[name=approver]").val();
+            //var Modifier = $("input[name=modifier]").val();
+            //var Comment = $("textarea[name=comment]").val();
+
+            //model.push({ rtoNumber: RTONumber, approver: Approver, modifier: Modifier, comment: Comment });
+
+            //$.ajax({
+            //    url: '/TransportModelData/getModelInfo',
+            //    data: JSON.stringify(model),
+            //    type: 'POST',
+            //    contentType: 'application/json;charset=utf-8',
+            //    async: false,
+            //    success: function (data) {
+            //        //window.location.href = "/RequestStatus/RequestDetail?requestID=" + data.RequestID;
+            //        alert("Postting data is over!");
+            //    }
+            //});
+        });
+    </script>
+</div>
+
+

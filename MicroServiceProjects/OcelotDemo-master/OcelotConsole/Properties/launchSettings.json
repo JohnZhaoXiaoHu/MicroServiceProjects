@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "OcelotConsole": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:13731;http://localhost:13738"
+    }
+  }
+}

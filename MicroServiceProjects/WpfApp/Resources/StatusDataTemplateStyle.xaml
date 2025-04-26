@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="xOkDataTemplate" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="Green"/>
+    </Style>
+    <Style x:Key="xWarnDataTemplate" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="Red"/>
+    </Style>
+</ResourceDictionary>
